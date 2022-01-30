@@ -12,6 +12,13 @@ socket.on('content', function (data) {
   $('pre').each(function (_, block) {
     hljs.highlightBlock(block)
   })
+
+  $('code.language-mermaid').addClass('mermaid')
+
+  mermaid.initialize({
+    startOnLoad: true,
+  })
+  mermaid.init()
 })
 
 socket.on('title', function (data) {
